@@ -2,12 +2,11 @@
 layout: default
 title: Categories
 use:
-    - posts_categories
+- posts_categories
 ---
 <h2>Categories</h2>
-
 <div>
-{% for category,posts in data.posts_categories %}
-<a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a>
-{% endfor %}
+    {% for category,posts in data.posts_categories %}
+    <a class="label label-info" href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a>
+    {% endfor %}
 </div>

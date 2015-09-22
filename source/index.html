@@ -19,7 +19,7 @@ use:
             <p class="tags">
             Tags:
             {% for tag in post.meta.tags %}
-            <a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+            <a class="label label-info" href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
             {% endfor %}
             </p>
         {% endif %}
@@ -27,7 +27,9 @@ use:
 {% endfor %}
 {% if page.pagination.previous_page or page.pagination.next_page %}
     <nav>
-        {% if page.pagination.previous_page %}<a href="{{ site.url }}{{ page.pagination.previous_page.url }}">Newer Posts</a>{% endif %}<br />
-        {% if page.pagination.next_page %}<a href="{{ site.url }}{{ page.pagination.next_page.url }}">Older Posts</a>{% endif %}<br />
+        <ul class="pager">
+            <li class="pull-right">{% if page.pagination.previous_page %}<a href="{{ site.url }}{{ page.pagination.previous_page.url }}">Newer Posts</a>{% endif %}</li>
+            <li class="pull-left"> {% if page.pagination.next_page %}<a href="{{ site.url }}{{ page.pagination.next_page.url }}">Older Posts</a>{% endif %}</li>
+        </ul>
     </nav>
 {% endif %}

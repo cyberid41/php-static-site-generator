@@ -1,7 +1,8 @@
 ---
-title: Syntax Highlighting
+title: Hello World Using Sculpin
 categories:
     - features
+    - tutorial
 
 ---
 You're all programmers, right? And you're writing code snippets on your Sculpin
@@ -38,5 +39,18 @@ if ($fencedCodeBlock->syntax !== 'PHP') {
     throw new UnexpectedValueException("wat");
 }
 ~~~
+```php
+<?php
+
+class UserController extends BaseController{
+    
+    protected $user;
+
+    public function __construct(UserRepository $user){
+        $this->user = $user;
+    }
+
+}
+```
 Like this addition to the skeleton? You can thank for [@Pawka](https://github.com/Pawka)
 for suggesting it. :)
